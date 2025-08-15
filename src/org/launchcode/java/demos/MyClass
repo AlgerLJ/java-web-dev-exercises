@@ -1,0 +1,18 @@
+package org.launchcode.java.demos;
+
+public class MyClass {
+    int value;
+
+    public MyClass(int value) {
+        this.value = value;
+    }
+
+    public static void main(String[] args) {
+        MyClass obj1 = new MyClass(10); // 创建一个对象，obj1指向它
+        MyClass obj2 = obj1; //  obj2也指向同一个对象，指向堆内存中的同一个地址
+        obj2.value = 20; // 修改obj2指向的对象的值，obj1也会受到影响
+
+        System.out.println(obj1.value); // 输出 20
+        System.out.println(obj2.value); // 输出 20
+    }
+}

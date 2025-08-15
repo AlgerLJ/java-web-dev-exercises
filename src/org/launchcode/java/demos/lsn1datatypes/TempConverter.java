@@ -4,13 +4,13 @@ import java.util.Scanner;
 
 public class TempConverter {
     public static void main(String[] args) {
-        double fahrenheit;
-        double celsius;
+        int fahrenheit;
+        int celsius;
         Scanner input;
 
         input = new Scanner(System.in);
         System.out.println("Enter the temperature in Fahrenheit: ");
-        fahrenheit = input.nextDouble();
+        fahrenheit = input.nextInt();
         input.close();
 
         celsius = (fahrenheit - 32) * 5/9;
