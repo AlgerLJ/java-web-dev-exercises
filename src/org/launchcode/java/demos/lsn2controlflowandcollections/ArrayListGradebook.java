@@ -18,7 +18,7 @@ public class ArrayListGradebook {
         do {
             newStudent = input.nextLine();
 
-            if (!newStudent.equals("")) {
+            if (!newStudent.isEmpty()) {
                 students.add(newStudent);
             }
 
