@@ -1,0 +1,82 @@
+// user class
+
+package exercises;
+
+public class User {
+    // 1. 所有属性设为 final，确保 User 对象一旦构建就是不可变的 (Immutable)
+    private final String firstName; // 必填
+    private final String lastName;  // 必填
+    private final int age;          // 可选
+    private final String phone;     // 可选
+
+    // 2. 私有构造函数，只能通过 Builder 来创建 User 实例
+    private User(Builder builder) {
+        this.firstName = builder.firstName;
+        this.lastName = builder.lastName;
+        this.age = builder.age;
+        this.phone = builder.phone;
+    }
+
+    // Getter 方法（不需要 Setter，因为对象是不可变的）
+    public String getFirstName() { return firstName; }
+    public String getLastName() { return lastName; }
+    public int getAge() { return age; }
+    public String getPhone() { return phone; }
+
+    // 3. 静态内部 Builder 类
+    public static class Builder {
+        private final String firstName; // 必填
+        private final String lastName;  // 必填
+        private int age = 0;            // 默认值
+        private String phone = "";      // 默认值
+
+        // Builder 的构造函数：强制要求传入必填参数
+        public Builder(String firstName, String lastName) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+        }
+
+        // 链式调用的核心：每个方法返回 'this'
+        public Builder age(int age) {
+            this.age = age;
+            return this; // 返回当前 Builder 对象
+        }
+
+        public Builder phone(String phone) {
+            this.phone = phone;
+            return this; // 返回当前 Builder 对象
+        }
+
+        // 最终步骤：调用 build() 创建真正的 User 对象
+        public User build() {
+            return new User(this);
+        }
+    }
+}
+
+
+
+
+
+//--------------------- add user class -----------------------------------------
+
+package exercises;
+
+
+
+public class addUser {
+    public static void main (String [] args) {
+        User user = new User.Builder("John", "Doe") // 必填参数
+                .age(25)                                 // 可选参数
+                .phone("123456789")                      // 可选参数
+                .build();                                // 最终构建
+
+        System.out.println(user.getFirstName()+" "+user.getLastName()+": "+user.getPhone()+"  |   " + user.getAge());
+    }
+
+}
+
+
+
+
+
