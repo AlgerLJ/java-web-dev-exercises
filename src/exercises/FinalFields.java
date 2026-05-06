@@ -15,14 +15,14 @@ public class FinalFields {
         //demo.intValue = 6;
 
         // This is allowed since we haven't initialized doubleValue yet
-        demo.doubleValue = 42.0;
+        //demo.doubleValue = 42.0;
 
         // However, this would result in a compiler error
-        demo.doubleValue = 6.0;
+        //demo.doubleValue = 6.0;
 
         // This would result in a compiler error, since we're trying to
         // give objectValue a different object value
-        demo.objectValue = new FortyTwo();
+        //demo.objectValue = new FortyTwo();
 
         // However, this is allowed since we're changing a field
         // inside the final object, and not changing which object

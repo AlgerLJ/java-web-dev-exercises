@@ -64,4 +64,12 @@ public class Student {
         return gpa;
     }
 
+/*
+    @Override
+    public String toString() {
+        return name + " (Credits: " + numberOfCredits + ", GPA: " + gpa + ")";
+
+    }
+
+*/
 }
